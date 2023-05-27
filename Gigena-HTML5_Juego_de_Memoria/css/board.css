@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #105e09;    
+}
+
+body.change-background {
+    background: linear-gradient(to left, #777, #777 40%, #ccc 55%, #777 70%);    
+  }
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0.46);
+}
