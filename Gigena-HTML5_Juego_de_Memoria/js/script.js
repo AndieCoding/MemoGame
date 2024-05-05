@@ -8,6 +8,7 @@ const imageSources = ['./img/card-back1.png', './img/card-back2.png'];
 const tileImage = document.querySelector('.tileImage');
 let currentIndex = 0;  
 isBackgroundChanged= false;        
+
 imageButton.addEventListener('click', function() {
   tileImage.src = imageSources[currentIndex];
   currentIndex = (currentIndex + 1) % imageSources.length;  
@@ -104,8 +105,8 @@ class Memorama {
     }
 
     resetStats () {
-        document.getElementById('aciertos').innerHTML = ' ';
-        document.getElementById('errores').innerHTML = ' ';
+        document.getElementById('aciertos').innerHTML = '<br>';
+        document.getElementById('errores').innerHTML = '<br>';
     }
 
     resetOpenedCards() {

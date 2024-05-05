@@ -9,7 +9,11 @@ body {
 }
 
 body.change-background {
-    background: linear-gradient(to left, #777, #777 40%, #ccc 55%, #777 70%);    
+    background: linear-gradient(
+		to left, #575656, 
+		#777 40%, 
+		#ccc 60%, 
+		#777 95%);    
   }
 
 h1 {
@@ -18,65 +22,63 @@ h1 {
     color: #fff;
     text-shadow: 2px 2px 2px rgb(0, 0, 0.46);
 }
-.aside {
-	margin: 1rem;
-	width: 130px;
-	height: 220px;
-	gap: 2.5em;
+.container {
+	display: grid;
+	grid-template-columns: 70% 20%;
+	grid-template-rows: 1fr 1fr;
+	column-gap: 2em;
+	margin: 0 5%;
+}
+
+.puntuacion {
+	grid-column: 2/3;
+	align-self: center;
+	width: fit-content;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 7%;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 40%;
-	left: 1em;
+	gap: 1em;
+	border-radius: 5px;
 	background-color: rgba(255, 251, 251, 0.825);
 	padding: 1rem;
 	box-shadow: 5px 5px 20px black;
-}
-.container .aside:hover {
-	box-shadow: 0 0 20px rgb(34, 130, 240);
-}
-div.aciertos,
-div.errores { height: 50px; }
+	block-size: 120px;
 
-div.aciertos { margin-top: -1em; }
-
-.container .aside div p {
+	&:hover { cursor: default}
+}
+.puntuacion p {
 	font-size: 28px;
 	text-align: center;
 	font-weight: 900;
 }
 
-main {
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: repeat(4, 1fr);
-	max-width: 800px;
-	margin: auto;
-	position: relative;
+.puntuacion:hover,
+button{ 
+	box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.664); 
 }
+
 .ajustes {
+	height: 70%;
+	grid-row: 2 / 3;
 	display: flex;
 	gap: 0.3em;
-	height: 120px;
-	position: absolute;
-	left: 85%;
-	top: 50%;
-	box-shadow: 5px 5px 20px black;
+	aspect-ratio: 1 / 1;
+}
+button { 
+	font-size: 22px; 
 }
 
 div.ajustes:hover,
 button:hover { cursor: pointer; }
 
-div.ajustes:hover .tileImage,
-div.ajustes:hover button { box-shadow: 0 0 20px rgb(205, 205, 4); }
-div.ajustes > img { width: 85px; }
-
-div.ajustes > button {
-	font-size: 22px;
-	width: 85px;
+main {
+	grid-area: 1 / 1 / 3 / 1;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	max-width: 700px;	
+	position: relative;
+	place-self: center end;
 }
 figure,
 figure img {
@@ -125,9 +127,24 @@ figure .searched-img {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 2em;
 	}
+	.puntuacion { width: fit-content;}
+	.ajustes { 
+		height: 25vh;
+		aspect-ratio: 16 / 9;
+		align-items: center;
 
-	.aside, .ajustes { 
-		position: static;
-	}
+		img {
+			width: 40%;
+			aspect-ratio: 1 / 1 ;
+		}
+	 }
+	 button {
+		block-size: 80px;
+		border-radius: 10px;
+		font-weight: 500;
+	 }
+	 
+	
 }
