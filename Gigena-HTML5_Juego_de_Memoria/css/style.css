@@ -1,114 +1,133 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-    .container .aside {
-        margin: 1rem;
-        width: 130px;
-        height: 220px;
-        gap: 2.5em;
-        justify-content: center;
-        align-items: center;
-        border-radius: 7%;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 40%;
-        left: 1em;        
-        background-color: rgba(255, 251, 251, 0.825);
-        padding: 1rem;
-        box-shadow: 5px 5px 20px black;
-    }
-    .container .aside:hover {
-        box-shadow: 0 0 20px rgb(34, 130, 240);
-    }
-    div.aciertos, div.errores {        
-        height: 50px
-    }
-    div.aciertos {
-        margin-top: -1em;
-    }
-        .container .aside div p {
-            font-size: 28px;
-            text-align: center;
-            font-weight: 900;
-        }      
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #105e09;    
+}
 
-    main {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 800px;
-        margin: auto;
-        position: relative;
-    }
-    div.ajustes {
-        display: flex;
-        gap: 0.3em;
-        height: 120px;        
-        position: absolute;
-        left: 85%;
-        top: 50%;   
-        box-shadow: 5px 5px 20px black;        
-    }
-    
-    div.ajustes:hover, button:hover {
-        cursor: pointer;
-    }
-    div.ajustes:hover .tileImage,div.ajustes:hover button  {
-        box-shadow: 0 0 20px rgb(205, 205, 4);
-    }
-        div.ajustes>img {
-            width: 85px;
-        }
-        div.ajustes>button {
-            font-size: 22px;
-            width: 85px;
-        }
-       
-        
-        figure, figure img {
-            display: inline-block;
-            width:100%;
-        }
+body.change-background {
+    background: linear-gradient(to left, #777, #777 40%, #ccc 55%, #777 70%);    
+  }
 
-        figure {
-            position: relative;
-            transition: all ease .4s;
-            transform-style: preserve-3d;
-            transform: perspective(600px) rotateY(0deg);
-            cursor: pointer;
-            box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
-        }
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0.46);
+}
+.aside {
+	margin: 1rem;
+	width: 130px;
+	height: 220px;
+	gap: 2.5em;
+	justify-content: center;
+	align-items: center;
+	border-radius: 7%;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 40%;
+	left: 1em;
+	background-color: rgba(255, 251, 251, 0.825);
+	padding: 1rem;
+	box-shadow: 5px 5px 20px black;
+}
+.container .aside:hover {
+	box-shadow: 0 0 20px rgb(34, 130, 240);
+}
+div.aciertos,
+div.errores { height: 50px; }
 
-        figure::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0);
-            transition: 0.3s all ease;
-        }
+div.aciertos { margin-top: -1em; }
 
-        figure:hover:after {
-            background: rgba(255, 255, 255, 0.137);
-        }
+.container .aside div p {
+	font-size: 28px;
+	text-align: center;
+	font-weight: 900;
+}
 
-        figure.opened {
-            transform: perspective(600px) rotateY(180deg);
-        }
-        figure .back {
-            display: block;
-            backface-visibility: hidden;
-        }
-        figure .searched-img {
-            position: absolute;
-            top: 0;    
-            transform: perspective(600px) rotateY(180deg);
-            backface-visibility: hidden;
-            overflow: hidden;
-        }
+main {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	max-width: 800px;
+	margin: auto;
+	position: relative;
+}
+.ajustes {
+	display: flex;
+	gap: 0.3em;
+	height: 120px;
+	position: absolute;
+	left: 85%;
+	top: 50%;
+	box-shadow: 5px 5px 20px black;
+}
+
+div.ajustes:hover,
+button:hover { cursor: pointer; }
+
+div.ajustes:hover .tileImage,
+div.ajustes:hover button { box-shadow: 0 0 20px rgb(205, 205, 4); }
+div.ajustes > img { width: 85px; }
+
+div.ajustes > button {
+	font-size: 22px;
+	width: 85px;
+}
+figure,
+figure img {
+	display: inline-block;
+	width: 100%;
+}
+figure {
+	position: relative;
+	transition: all ease 0.4s;
+	transform-style: preserve-3d;
+	transform: perspective(600px) rotateY(0deg);
+	cursor: pointer;
+	box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
+}
+figure::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0);
+	transition: 0.3s all ease;
+}
+figure:hover:after {
+	background: rgba(255, 255, 255, 0.137);
+}
+figure.opened {
+	transform: perspective(600px) rotateY(180deg);
+}
+figure .back {
+	display: block;
+	backface-visibility: hidden;
+}
+figure .searched-img {
+	position: absolute;
+	top: 0;
+	transform: perspective(600px) rotateY(180deg);
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+@media only screen and (max-width:800px) {
+	.container { 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.aside, .ajustes { 
+		position: static;
+	}
+}
