@@ -39,7 +39,7 @@ h1 {
 	align-items: center;
 	gap: 1em;
 	border-radius: 5px;
-	background-color: rgba(255, 251, 251, 0.825);
+	background-color: rgba(255, 251, 251, 0.95);
 	padding: 1rem;
 	box-shadow: 5px 5px 20px black;
 	block-size: 120px;
@@ -66,6 +66,9 @@ button{
 }
 button { 
 	font-size: 22px; 
+	background-color: rgba(255, 251, 251, 0.95);
+	border-radius: 5px;
+	padding: 0.5em;
 }
 
 div.ajustes:hover,
@@ -129,7 +132,9 @@ figure .searched-img {
 		align-items: center;
 		gap: 2em;
 	}
-	.puntuacion { width: fit-content;}
+	.puntuacion { 
+		background-color: rgba(255, 251, 251, 1);
+	}
 	.ajustes { 
 		height: 25vh;
 		aspect-ratio: 16 / 9;
@@ -145,6 +150,20 @@ figure .searched-img {
 		border-radius: 10px;
 		font-weight: 500;
 	 }
-	 
-	
+}
+@media only screen and (max-width:450px) {
+	main {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.puntuacion {
+		position: sticky;
+		top:0%;
+		z-index: 100;
+		block-size: 60px;
+		div {
+			display: flex;
+			gap: 2em;
+		}
+	}
+
 }
