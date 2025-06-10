@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<h1>Listo para jugar</h1>
 		<div class="container">
 			<div class="puntuacion">
 				<div class="aciertos">
@@ -22,6 +21,16 @@
 					<h2>Errores</h2>
 					<p id="errores"></p>
 				</div>
+			</div>
+			<div class="controles" >
+				<img src="./img/play.svg" alt="iniciar" class="icon" id="start-btn" />
+				<div class="cambiar-estilo" id="imageButton">					
+					<button>
+						<img src="./img/card-back2.png" alt="back" class="tileImage tiled" />
+
+					</button>
+				</div>
+				
 			</div>
 			<main class="board-game">
 				<figure>
@@ -71,14 +80,11 @@
 					<div class="searched-img">
 						<img src="./img/103.jpg" alt="pipe-card" />
 					</div>
-				</figure>
+				</figure>				
 			</main>
-			<div class="ajustes" id="imageButton">
-				<img src="./img/card-back1.png" alt="back" class="tileImage tiled" />
-				<button>Cambiar Estilo</button>
+			<div class="stats-final hide" id="stats">			
 			</div>
 		</div>
-
 		<script src="./js/script.js"></script>
 	</body>
 </html>
