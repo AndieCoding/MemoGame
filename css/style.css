@@ -23,7 +23,7 @@
 	border-radius: 5px;
 	text-align: center;
 	position: fixed;
-	top: 45vh;
+	top: 100px;
     left: calc(50vw - 150px);
 	z-index: 1000;
 	width: 300px;
@@ -67,7 +67,7 @@ h1 {
 }
 .container {
 	display: grid;
-	grid-template-columns: 70% 20%;
+	grid-template-columns: 60% 40%;
 	grid-template-rows: 1fr 1fr;
 	column-gap: 2em;
 	padding-top: 2rem;
@@ -100,6 +100,7 @@ h1 {
 	align-items: center;
 	justify-content: space-around;
 	gap: 2rem;
+	place-self: start;
 }
 .cambiar-estilo {
 	height: 160px;
@@ -149,7 +150,7 @@ main {
 	display: grid;
 	grid-gap: 10px;
 	grid-template-columns: repeat(4, 1fr);
-	max-width: 700px;	
+	max-width: 420px;	
 	position: relative;
 	place-self: center end;
 }
@@ -160,7 +161,7 @@ figure img {
 }
 figure {
 	position: relative;
-	transition: all ease 0.4s;
+	transition: all ease 0.3s;
 	transform-style: preserve-3d;
 	transform: perspective(600px) rotateY(0deg);
 	cursor: pointer;
@@ -200,7 +201,8 @@ figure .searched-img {
 		grid-template-rows: 1fr 2fr;
 		column-gap: 0;
 		row-gap: 2rem;
-		padding: 1rem;
+		padding: 0.5rem;
+		padding-top: 0.1rem;
 	}
 	.puntuacion { 
 		grid-column: 1 / 2;
@@ -227,6 +229,10 @@ figure .searched-img {
 	
 	 main{
 		grid-area: 2 / 1 / 3 / 3;
+		place-self: center;
+	 }
+	 .controles{
+		place-self: normal;
 	 }
 }
 
@@ -235,15 +241,21 @@ figure .searched-img {
 		width: 70px;
 	}
 	.container{
-		padding: 0.3rem
+		height: 350px;
+		padding: 0.2rem;
+		padding-top: 0.1rem;
+		row-gap: 0.1rem;
 	}
 	.board-game{
-		grid-gap: 5px;
+		grid-gap: 3px;
 	}
 	.puntuacion{
 		padding: 0 0.2rem
 	}
 	.controles{
 		gap:0;
+	}
+	.cambiar-estilo {
+		height: 80px;
 	}
 }
